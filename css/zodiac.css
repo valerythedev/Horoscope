@@ -1,15 +1,21 @@
 *{
   box-sizing: border-box;
   font-family: 'Cinzel', serif;
-  background: rgb(6, 77, 115);
- 
+  /* background: rgb(6, 77, 115); */
+
+}
+html{
+  background-image: url(/Users/valerygonzalez/Desktop/RC/Week-4/LAB/Horoscope/img/backg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 h1{
   color: white;
     text-align: center;
 }
 .cuerpo{
-  background: rgb(6, 77, 115);
+  /* background: rgb(6, 77, 115); */
   height: 555px;
 }
 form{
@@ -25,6 +31,7 @@ button{
   font-size: 1rem;
   height: 33px;
   background: white;
+  color: black;
 }
 h2{
   color: wheat;
@@ -32,7 +39,8 @@ h2{
 }
 input{
   background: white;
+  color: black;
 }
 .mes{
-  color: white;
+  color: black
 }
