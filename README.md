@@ -87,3 +87,4 @@ Works on all modern browsers:
 
 *Perfect for portfolio showcase - demonstrates skills in responsive design, vanilla JavaScript, and modern CSS techniques.* 
 
+https://horoscopo-deval.netlify.app/
