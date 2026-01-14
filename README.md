@@ -77,14 +77,6 @@ Each sign includes information about its element (Fire, Earth, Air, or Water) an
 
 ## 🌐 Browser Compatibility
 
-Works on all modern browsers:
-- Chrome
-- Firefox
-- Safari
-- Edge
-
----
-
-*Perfect for portfolio showcase - demonstrates skills in responsive design, vanilla JavaScript, and modern CSS techniques.* 
+Works on all modern browsers
 
 https://horoscopo-deval.netlify.app/
