@@ -1,9 +1,18 @@
 // Get the values of the birthdate
 // depending on the date of birth assign zodiac
 
-// it was an event listener issue rather than scoping
-document.querySelector('#YouAreAStar').addEventListener('click', zodiaCal)
+// Event listeners
+document.querySelector('#YouAreAStar').addEventListener('click', zodiaCal);
+document.querySelector('#clearButton').addEventListener('click', clearResults);
+
 function zodiaCal() {
+  // Hide previous results and show loading spinner
+  document.getElementById('constellation').style.display = 'none';
+  document.getElementById('zodiaDefinition').style.display = 'none';
+  document.getElementById('clearButton').style.display = 'none';
+  document.getElementById('zodiacSign').innerText = '';
+  document.getElementById('loadingSpinner').style.display = 'flex';
+  
   // we're creating a variable, and we don't know what the zodiac sign is yet so we asign it nothing
   let birthDate = Number(document.getElementById("birthdate").value); 
   console.log(birthDate)
@@ -63,7 +72,32 @@ function zodiaCal() {
     constellation.src = "img/Zodiac/9.svg"
     zodiacMeaning ="Sagittarius is the ninth sign of the zodiac, representing individuals with an adventurous and optimistic nature. Known for their love of freedom and exploration, Sagittarians have a restless spirit and a thirst for knowledge. They possess a philosophical mindset and are constantly seeking the deeper meaning of life. Sagittarians are natural-born travelers, drawn to new experiences and different cultures. Their open-mindedness and enthusiasm make them excellent storytellers and conversationalists, often captivating others with their tales and perspectives. With their optimistic outlook, Sagittarians inspire others to embrace the joy of living and to embrace new opportunities with enthusiasm. Their fiery spirit and belief in possibilities make them natural leaders, always ready to embark on new adventures and inspire others to follow their path. Element: Fire"
   }
-  // here we're showing what the zodiac sign is
-  document.getElementById("zodiacSign").innerText = zodiacSign;
-  document.getElementById('zodiaDefinition').innerText = zodiacMeaning
+  // Hide loading spinner and show results with a smooth transition
+  setTimeout(() => {
+    document.getElementById('loadingSpinner').style.display = 'none';
+    
+    // here we're showing what the zodiac sign is
+    document.getElementById("zodiacSign").innerText = zodiacSign;
+    document.getElementById('zodiaDefinition').innerText = zodiacMeaning;
+    
+    // Show the constellation image, description, and clear button
+    constellation.style.display = 'block';
+    document.getElementById('zodiaDefinition').style.display = 'block';
+    document.getElementById('clearButton').style.display = 'block';
+  }, 800); // Small delay to show the loading animation
+}
+
+function clearResults() {
+  // Reset form
+  document.getElementById("birthdate").value = "";
+  document.getElementById("birthmonth").value = "";
+  
+  // Reset results section
+  document.getElementById("zodiacSign").innerText = "ZODIAC CONSTELLATION";
+  document.getElementById('loadingSpinner').style.display = 'none';
+  document.getElementById('constellation').style.display = 'none';
+  document.getElementById('constellation').src = "";
+  document.getElementById('zodiaDefinition').style.display = 'none';
+  document.getElementById('zodiaDefinition').innerText = "";
+  document.getElementById('clearButton').style.display = 'none';
 }
